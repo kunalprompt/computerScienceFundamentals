@@ -12,4 +12,5 @@ def decorator_function(func):
 def summition(value):
     return value
 
-print(summition(10))
+s = summition(10)
+print(s, summition.__name__)
