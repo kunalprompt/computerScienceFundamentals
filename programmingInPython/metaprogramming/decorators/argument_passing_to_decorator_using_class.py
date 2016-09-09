@@ -8,6 +8,7 @@ class CustomLoggingDecorator(object):
         self.arg = arg
 
     def __call__(self, func):
+        print self.arg
 
         @wraps(func)  # this is how we can stay on the wrapped object
         def wrapper(*args, **kwargs):
