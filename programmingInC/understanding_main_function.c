@@ -40,9 +40,15 @@ Interview Questions:
 
 1. Why do we need main()?
 
-2. Can we change the name of function main?
+2. Can we change the name of function main()?
 
 3. What if define main as void main(void){...}?
 
+void main(void)
+{
+	printf("%s\n", "Hello World");
+}
+
 4. What of we define main as void main()?
+
 */
