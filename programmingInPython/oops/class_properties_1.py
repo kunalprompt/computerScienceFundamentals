@@ -3,16 +3,17 @@ Property is something which plays an important role is exposing an attribute
 of the class to the outside world.
 
 Example: For a engineer, its easy to understand that instance variable is
-stored as "_temparature" in the class, and some has some conditions on it.
+stored as "_temparature" in the class below, and some has some conditions on it.
 But for the outside world, its considered as best practice to give simple
 and easy to remember attributes. So here comes the properties to save us.
 
 """
 
-
 # ---------------------------------------------------------------------------
 # Method - 1: Defining Properties of a class
 # ---------------------------------------------------------------------------
+
+
 class Celcius(object):
 
     def __init__(self, value=None):
