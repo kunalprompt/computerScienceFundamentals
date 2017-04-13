@@ -3,8 +3,10 @@ Generator using class
 
 The three most important pointers here are:
 1. __init__ to initiate the generator
-2. __next__ to invoke for the next element of the generator
+2. __next__ to invoke for the next element of the generator, in Py2 it is just next()
 3. Stop generator using StopIteration Exception
+
+PEP: https://www.python.org/dev/peps/pep-0234/
 """
 
 
@@ -13,12 +15,16 @@ class Counter(object):
         self.start = start
         self.end = end
 
-    # def __iter__(self):
+    def __iter__(self):
         # 1. In Object based Generator - iterator should return itself in __iter__
+        # till that time it is not a generator/iterator
         # 2. for and in statements usage is supported by the Object based Generators
-        # return self
+        # 3. We can also do some default initializations here.
+        # 4. iter([iterable]) call should return the iterator,
+        # if __iter__ is not implemented it won't return an iterator
+        return self
 
-    def __next__(self):
+    def next(self):
         if self.start < self.end:
             self.start += 1
             return self.start
