@@ -21,5 +21,4 @@ or how does it serves the purpose of generator?
     def list_iterator(list):
         for i in range(list):
             yield i
-    
     ```
