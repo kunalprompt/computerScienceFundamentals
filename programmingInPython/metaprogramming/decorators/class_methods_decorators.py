@@ -1,6 +1,11 @@
 from functools import WRAPPER_ASSIGNMENTS, update_wrapper, wraps
 
 
+"""
+method_decorator: https://github.com/django/django/blob/master/django/utils/decorators.py
+"""
+
+
 def method_decorator(decorator, name=''):
     """
     Convert a function decorator into a method decorator
@@ -89,6 +94,7 @@ def class_method_decorator(**kwargs):
 
         def _inner_wrapper(name, *args, **kwargs):
             print(prefix, name)
+            return func(name, *args, **kwargs)
         return _inner_wrapper
 
     return wrapper
@@ -97,7 +103,7 @@ def class_method_decorator(**kwargs):
 class HelloClass(object):
     @method_decorator(class_method_decorator(prefix="Hello"))
     def print_hello(self, name, *args, **kwargs):
-        print name
+        print("Class Method Invoked")
 
 h = HelloClass()
 h.print_hello("Kunal")
