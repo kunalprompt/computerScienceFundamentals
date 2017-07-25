@@ -1,5 +1,8 @@
 class HeapStructure(object):
     def __init__(self, heap_type='max'):
+        """
+        :param heap_type: max/min heap
+        """
         self.heap_elements = []
         self.heap_type = heap_type
 
@@ -84,6 +87,8 @@ class HeapStructure(object):
         for i in self.heap_elements:
             print(i, end=' ')
         print()
+
+# Example of HEAP
 
 heap = HeapStructure()
 heap._insert(6)
